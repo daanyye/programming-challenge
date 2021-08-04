@@ -1,3 +1,5 @@
+image::Diagram.png[]
+
 = eXXcellent programming challenge
 
 This repository provides the project scaffold for a simple
