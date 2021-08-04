@@ -12,13 +12,19 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Tests the interaction with the CSVDataReader and the Analyzers
+ */
 class IntegrationTest 
 {
+    private CSVDataReader CsvDataReader;
+
     private WeatherDataAnalyzer WeatherDataAnalyzer;
     private FootballDataAnalyzer FootballDataAnalyzer;
 
-    private CSVDataReader CsvDataReader;
-
+    /**
+        * Initializes members and reads data from csv - Files in /resources
+    */
     @BeforeEach
     void SetUp()
     {
@@ -30,6 +36,10 @@ class IntegrationTest
         FootballDataAnalyzer = new FootballDataAnalyzer(footballData);
     }
 
+    /**
+        * Tests the WeatherDataAnalyzer method GetDayOfSmallestWeatherSpread() 
+        with data from csv - File: /resources/weather.csv
+    */
     @Test
     void SmallestTemperatureSpread()
     {
@@ -38,6 +48,10 @@ class IntegrationTest
         assertEquals(expectedDay, actualDay);
     }
 
+    /**
+        * Tests the FootballDataAnalyzer method GetTeamWithSmallestGoalsDistance() 
+        with data from csv - File: /resources/football.csv
+    */
     @Test
     void TeamWithSmallestGoalDifference()
     {

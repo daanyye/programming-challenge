@@ -12,11 +12,17 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Tests the Analyzers with mocked data (Unit Tests)
+ */
 class AnalyzerTest 
 {
     private WeatherDataAnalyzer WeatherDataAnalyzer;
     private FootballDataAnalyzer FootballDataAnalyzer;
 
+    /**
+        * Initializes members and sets up mocked data
+    */
     @BeforeEach
     void SetUp()
     {
@@ -24,6 +30,9 @@ class AnalyzerTest
         FootballDataAnalyzer = new FootballDataAnalyzer(SetUpMockFootballData());
     }
 
+    /**
+        * Sets up mocked WeatherData
+    */
     private List<WeatherData> SetUpMockWeatherData() 
     {
         List<WeatherData> weatherData = new ArrayList<WeatherData>();
@@ -40,6 +49,9 @@ class AnalyzerTest
         return weatherData;
     }
 
+    /**
+        * Sets up mocked FootballData
+    */
     private List<FootballData> SetUpMockFootballData() 
     {
         List<FootballData> footballData = new ArrayList<FootballData>();
@@ -67,6 +79,9 @@ class AnalyzerTest
         return footballData;
     }
 
+    /**
+        * Tests the WeatherDataAnalyzer method: GetDayOfSmallestWeatherSpread() with mocked data
+    */
     @Test
     void SmallestTemperatureSpread()
     {
@@ -75,6 +90,9 @@ class AnalyzerTest
         assertEquals(expectedDay, actualDay);
     }
 
+    /**
+        * Tests the FootballDataAnalyzer method: GetTeamWithSmallestGoalsDistance() with mocked data
+    */
     @Test
     void TeamWithSmallestGoalDifference()
     {
